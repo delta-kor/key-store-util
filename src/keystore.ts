@@ -22,12 +22,14 @@ class KeyStore {
 
   private getLength(): number {
 
+    this.refreshExpired();
     return this.keys.size;
 
   }
 
   public saveKey(key: string, value: any, expiredAfter?: Date | number): boolean {
 
+    this.refreshExpired();
     if(this.keys.has(key)) return false;
 
     if(typeof expiredAfter === 'number') {
@@ -52,7 +54,22 @@ class KeyStore {
 
   public get(key: string): Key | null {
 
+    this.refreshExpired();
     return this.keys.get(key) || null;
+
+  }
+
+  private refreshExpired(): void {
+
+    const now: number = new Date().getTime();
+
+    const entries = this.keys.values();
+    for(let entry of entries) {
+      if(!entry || !entry.expiredAfter) continue;
+      if(entry.expiredAfter.getTime() < now) {
+        this.keys.delete(entry.key);
+      }
+    }
 
   }
 

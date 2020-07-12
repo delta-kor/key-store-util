@@ -8,7 +8,7 @@ const KeyStore = require('key-store-util');
 const keyStore = new KeyStore();
 ```
 
-### Storing Key
+### Storing key
 ```javascript
 // default saving
 keystore.saveKey('key1', 'value1');

@@ -35,4 +35,12 @@ describe('Key saving', function() {
     assert.equal(keystore.get('keyX'), null);
   });
 
+  it('Key expiring', async function() {
+    this.timeout(1000);
+    keystore.saveKey('keyX', 'valueX', new Date(new Date().getTime() + 100));
+    await new Promise(resolve => setTimeout(resolve, 500));
+    assert.isNull(keystore.get('keyX'));
+    return;
+  })
+
 })
