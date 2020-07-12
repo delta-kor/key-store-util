@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { KeyStore } from '../src';
+import KeyStore from '../src';
 
 describe('Key saving', function() {
 
