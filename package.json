@@ -1,0 +1,29 @@
+{
+  "name": "key-store-util",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/tsc",
+    "test": "./node_modules/.bin/mocha -r ./node_modules/ts-node/register ./tests/*.test.ts",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delta-kor/key-store-util.git"
+  },
+  "author": "delta-kor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/delta-kor/key-store-util/issues"
+  },
+  "homepage": "https://github.com/delta-kor/key-store-util#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^8.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6"
+  }
+}
