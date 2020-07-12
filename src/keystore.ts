@@ -50,6 +50,12 @@ class KeyStore {
 
   }
 
+  public get(key: string): Key | null {
+
+    return this.keys.get(key) || null;
+
+  }
+
 }
 
 export { KeyStore };
