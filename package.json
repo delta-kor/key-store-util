@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/delta-kor/key-store-util.git"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "author": "delta-kor",
   "license": "MIT",
   "bugs": {
